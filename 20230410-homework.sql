@@ -107,7 +107,7 @@ FROM [Order Details] od
 INNER JOIN Products p ON od.ProductID = p.ProductID
 WHERE od.Discount = 0
 -- 列出購買非本國的產品的客戶
-SELECT c.CustomerID,c.CompanyName
+SELECT DISTINCT c.CustomerID,c.CompanyName
 FROM Suppliers s
 INNER JOIN Products p ON s.SupplierID = p.SupplierID
 INNER JOIN [Order Details] od ON od.ProductID = p.ProductID
